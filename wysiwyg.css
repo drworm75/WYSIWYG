@@ -1,0 +1,38 @@
+#card-holder {
+	padding: 25px;
+	display: flex;
+	justify-content: flex-start;
+	/*align-content: flex-start;*/
+	flex-wrap: wrap;
+
+}
+
+.card {
+	max-width: 220px;
+	margin-left: 10px;
+	margin-top: 10px;
+}
+
+.person__container {
+	min-width: 20px;
+	margin-left: 10px;
+	margin-top: 10px;
+/*	position: relative;
+	z-index: 2;*/
+}
+
+.card img {
+	height: 220px;
+	width: 220px
+}
+#card-holder person:nth-of-type(n) {
+	background-color: #ADD8E6;
+}
+
+#card-holder person:nth-of-type(2n) {
+	background-color: #FFFEE0;
+}
+
+.selected {
+	border: 3px dotted red;
+}
