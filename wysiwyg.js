@@ -78,12 +78,9 @@ for (var i = 0; i < famousPeople.length; i++) {
 // }
 // document.body.addEventListener("click", whatWasThatClick);
 
-function clickElement(event) {
+function personElementSelector(selectedEl) {
 	classSelected = document.getElementsByClassName("selected");
-	// while (classSelected.length)
-	if (event.target.parentElement.localName === "person") {
-	selectedEl = event.target.parentNode;
-		if (selectedEl.classList[2] === "selected") {
+			if (selectedEl.classList[2] === "selected") {
 			selectedEl.classList.toggle("selected");
 		} else {
 			while (classSelected.length)
@@ -92,11 +89,29 @@ function clickElement(event) {
 		}
 		if (selectedEl.classList[2] === "selected") {
 		userInputField.focus();
+		userInputField.value = "";
 		} else {
 		userInputField.blur();
 		}
-		}
+
+}
+
+
+
+function clickElement(event) {
+	if (event.target.parentElement.localName === "person") {
+		selectedEl = event.target.parentNode;
+		personElementSelector(selectedEl)
+	} 
+	else if (event.target.localName === "person") {
+		selectedEl = event.target;
+		personElementSelector(selectedEl)		
 	}
+	else {
+		selectedEl = event.target.parentNode.parentNode;
+		personElementSelector(selectedEl)		
+	}
+}
 
 function copyText(event) {
 	console.log(event);
