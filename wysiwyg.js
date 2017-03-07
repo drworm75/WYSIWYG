@@ -89,7 +89,7 @@ function personElementSelector(selectedEl) {
 		}
 		if (selectedEl.classList[2] === "selected") {
 		userInputField.focus();
-		userInputField.value = "";
+		userInputField.value = selectedEl.children[1].childNodes["0"].textContent;
 		} else {
 		userInputField.blur();
 		}

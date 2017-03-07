@@ -57,10 +57,10 @@ html {
 }
 
 
-input[type="text"] {
+textarea[type="text"] {
 	margin-top: 185px;
     width: 500px;
-    height: 30px;
+    height: 200px;
     font-size: 16px;
 
 }
