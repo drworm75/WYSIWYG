@@ -1,0 +1,66 @@
+
+html {
+	height: 100%;
+	/*background: url(/images/wysiwyg-background.jpg) center center;*/
+	background: linear-gradient(to bottom, rgba(255,255,255,0.6) 0%,rgba(255,255,255,0.7) 100%),url(/images/wysiwyg-background.jpg) repeat center center;
+}
+
+#header-container {
+	display: flex;
+	align-content: center;
+	justify-content: center;
+
+	
+}
+
+#input-container {
+
+}
+
+#card-holder {
+	padding: 25px;
+	display: flex;
+	justify-content: flex-start;
+	/*align-content: flex-start;*/
+	flex-wrap: wrap;
+
+}
+
+.card {
+	max-width: 220px;
+	margin-left: 10px;
+	margin-top: 10px;
+}
+
+.person__container {
+	min-width: 20px;
+	margin-left: 10px;
+	margin-top: 10px;
+/*	position: relative;
+	z-index: 2;*/
+}
+
+.card img {
+	height: 220px;
+	width: 220px
+}
+#card-holder person:nth-of-type(n) {
+	background-color: #ADD8E6;
+}
+
+#card-holder person:nth-of-type(2n) {
+	background-color: #FFFEE0;
+}
+
+.selected {
+	border: 3px dotted red;
+}
+
+
+textarea[type="text"] {
+	margin-top: 185px;
+    width: 500px;
+    height: 200px;
+    font-size: 16px;
+
+}
