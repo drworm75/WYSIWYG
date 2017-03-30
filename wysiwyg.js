@@ -1,6 +1,5 @@
 var userInputField = document.getElementById("user-input-field");
 var cardHolder = document.getElementById("card-holder");
-
 var famousPeople =	[
 			  {	  title: "Secretary",
 				  name: "Alexander Hamilton",
@@ -58,45 +57,35 @@ var famousPeople =	[
 				}
 					]
 
-				
-
 for (var i = 0; i < famousPeople.length; i++) {
 	var historyCard = "";
-  // historyCard += `<div class="person__container" id="person--${i}"></div>`;
 	historyCard += `<header>${famousPeople[i].title} ${famousPeople[i].name}</header>`
 	historyCard += `<section>${famousPeople[i].bio}<br> <img src=${famousPeople[i].image}></section>`
 	historyCard += `<footer>Born: ${famousPeople[i].lifespan.birth}<br>Died: ${famousPeople[i].lifespan.death} </footer>`
 	cardHolder.children[i].innerHTML = historyCard;
 	cardHolder.children[i].className += " person__container";
 	cardHolder.children[i].id += `person--${i}`;
-
 }
-
-// function whatWasThatClick(event) {
-// 	console.log(event);
-// 	console.log(event.target.children[0]);
-// }
-// document.body.addEventListener("click", whatWasThatClick);
 
 function personElementSelector(selectedEl) {
 	classSelected = document.getElementsByClassName("selected");
-			if (selectedEl.classList[2] === "selected") {
+		if (selectedEl.classList[2] === "selected") {
 			selectedEl.classList.toggle("selected");
-		} else {
+		} 
+		else {
 			while (classSelected.length)
-				classSelected[0].classList.remove("selected");
+			classSelected[0].classList.remove("selected");
 			selectedEl.classList.toggle("selected");
 		}
 		if (selectedEl.classList[2] === "selected") {
-		userInputField.focus();
-		userInputField.value = selectedEl.children[1].childNodes["0"].textContent;
-		} else {
+			userInputField.focus();
+			userInputField.value = selectedEl.children[1].childNodes["0"].textContent;
+		} 
+		else {
 		userInputField.blur();
 		}
 
 }
-
-
 
 function clickElement(event) {
 	if (event.target.parentElement.localName === "person") {
@@ -114,20 +103,15 @@ function clickElement(event) {
 }
 
 function copyText(event) {
-	console.log(event);
 	if (event.keyCode !== 13) {
-	console.log(userInputField.value);
-	console.log(selectedEl.children[1]);
-	selectedEl.children[1].childNodes["0"].textContent = userInputField.value;
-	} else {
+		selectedEl.children[1].childNodes["0"].textContent = userInputField.value;
+	} 
+	else {
 		userInputField.blur();
 		userInputField.value = "";
 	    classSelected[0].classList.remove("selected");
 	}
-
 }
-
-
 
 // Now containerEl will have elements in it
 var containerEl = document.getElementsByClassName("person__container");
